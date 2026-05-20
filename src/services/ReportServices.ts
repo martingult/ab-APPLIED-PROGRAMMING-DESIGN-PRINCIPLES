@@ -11,7 +11,17 @@ export class ReportService {
     constructor(stations: FuelStation[]) {
         this.stations = stations;
     }
-
+/**
+     * Calcula la media aritmética de un tipo de combustible, ignorando valores nulos.
+     *  fuelType La propiedad del combustible a calcular.
+     *  El precio medio redondeado a 3 decimales.
+     */
+    
+    /**
+     * Ordena las gasolineras por precio para obtener el top 5 más barato y más caro.
+     * fuelType La propiedad del combustible a filtrar.
+     *  Objeto con las 5 más baratas y las 5 más caras.
+     */
     public getAveragePrice(fuelType: 'precioGasoleoA' | 'precioGasolina95E5'): number {
         const validStations = this.stations.filter(s => s[fuelType] !== null);
         if (validStations.length === 0) return 0;

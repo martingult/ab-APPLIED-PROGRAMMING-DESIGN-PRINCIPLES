@@ -16,7 +16,12 @@ export class ApiService {
         const numericPrice = parseFloat(priceStr.replace(',', '.'));
         return isNaN(numericPrice) ? null : numericPrice;
     }
-
+/**
+     * Descarga y normaliza los datos de gasolineras de una provincia específica.
+     *  fecha La fecha del informe (formato 22-03-1999).
+     * idProvincia El código identificador de la provincia.
+     *  Una promesa con un array de objetos FuelStation limpios.
+     */
     public async getStationsByProvince(fecha: string, idProvincia: string): Promise<FuelStation[]> {
         const url = `${CONFIG.API_URL_BASE}/${fecha}/${idProvincia}`;
         try {

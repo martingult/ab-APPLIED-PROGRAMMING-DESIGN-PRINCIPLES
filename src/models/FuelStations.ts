@@ -1,3 +1,6 @@
+/**
+ * Interfaz que representa una gasolinera con precios normalizados.
+ */
 export interface FuelStation {
     provincia: string;
     localidad: string;
