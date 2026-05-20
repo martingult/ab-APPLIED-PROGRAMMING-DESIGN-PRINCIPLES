@@ -1,4 +1,4 @@
-# Guía de Contribución 🤝
+# Guía de Contribución 
 
 ¡Gracias por tu interés en contribuir a este proyecto de análisis de precios de combustibles! Para mantener el código limpio y organizado, te pedimos que sigas estas pautas.
 
