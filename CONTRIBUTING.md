@@ -2,7 +2,7 @@
 
 ¡Gracias por tu interés en contribuir a este proyecto de análisis de precios de combustibles! Para mantener el código limpio y organizado, te pedimos que sigas estas pautas.
 
-## Cómo empezar
+## Cómo contribuir
 1. Haz un **Fork** de este repositorio.
 2. Clona tu fork en tu máquina local: `git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git`
 3. Instala las dependencias ejecutando: `npm install`

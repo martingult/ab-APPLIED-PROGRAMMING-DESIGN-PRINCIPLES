@@ -5,7 +5,9 @@
   "scripts": {
     "start": "tsx src/index.ts",
     "test": "tsx --test src/**/*.test.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "lint": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^25.9.1",
