@@ -13,21 +13,10 @@ En esta versión se ha refactorizado el código para cumplir con los **principio
 - **Clean Code:** Eliminación de *magic strings/numbers* centralizando las configuraciones en `src/config/constant.ts`.
 - **Estructura Modular:** Cada interfaz y clase reside en su propio fichero dentro del directorio `src/`.
 
-##  Cómo ejecutar el proyecto
-Primero hay que instalar dependencias: `npm install`
-Segundo hay que ejecutar el programa: `npm start`
-Tercero hay que ejecutar los tests: `npm test`
-
 ### Requisitos previos
 - Node.js instalado en el sistema.
 
-### 2. Instalación de dependencias
-Abre la terminal en la raíz del proyecto y ejecuta:
-```bash
-npm install
-npm install -D tsx
 
-Bibliografía y Referencias
 
 Ministerio para la Transición Ecológica y el Reto Demográfico (2026). Geoportal: Consulta de precios de carburantes en estaciones de servicio. [En línea]. Disponible en: https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/ [Accedido el 27 de mayo de 2026].
 
