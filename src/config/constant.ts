@@ -1,3 +1,8 @@
+export interface Provincia {
+    id: string;
+    nombre: string;
+}
+
 export const CONFIG = {
     API_URL_BASE: "https://energia.serviciosmin.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestresHist/FiltroProvincia",
     PROVINCIAS_INTERES: [
@@ -5,7 +10,7 @@ export const CONFIG = {
         { id: "15", nombre: "A Coruña" },
         { id: "38", nombre: "Santa Cruz de Tenerife" },
         { id: "06", nombre: "Badajoz" }
-    ],
+    ] as Provincia[],
     COMBUSTIBLES: {
         GASOLEO_A: "precioGasoleoA",
         GASOLINA_95: "precioGasolina95E5"

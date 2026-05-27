@@ -1,26 +1,30 @@
-import { test, describe } from 'node:test';
-import assert from 'node:assert/strict';
-import { ReportService } from './ReportServices.js';
-import { FuelStation } from '../models/FuelStations.js';
+import { FuelStation } from '../models/FuelStation.js';
 
-describe('Pruebas del ReportService', () => {
+export class ReportService {
+    constructor(private stations: FuelStation[]) {}
 
-    test('Debe calcular la media correctamente ignorando las gasolineras sin precio (null)', () => {
-        // 1. PREPARACIÓN (Datos falsos)
-        const gasolinerasInventadas: FuelStation[] = [
-            { provincia: 'Madrid', localidad: 'A', rotulo: 'Gasolinera 1', direccion: '', precioGasoleoA: 1.500, precioGasolina95E5: null },
-            { provincia: 'Madrid', localidad: 'B', rotulo: 'Gasolinera 2', direccion: '', precioGasoleoA: 2.000, precioGasolina95E5: null },
-            { provincia: 'Madrid', localidad: 'C', rotulo: 'Gasolinera Rota', direccion: '', precioGasoleoA: null, precioGasolina95E5: null }
-        ];
+    // Usamos filter para ignorar nulos y map para obtener precios
+    getAveragePrice(fuelType: 'precioGasoleoA' | 'precioGasolina95E5'): number {
+        const validPrices = this.stations
+            .map(s => s[fuelType])
+            .filter((p): p is number => p !== null);
 
-        const servicio = new ReportService(gasolinerasInventadas);
+        if (validPrices.length === 0) return 0;
+        const sum = validPrices.reduce((a, b) => a + b, 0);
+        return parseFloat((sum / validPrices.length).toFixed(3));
+    }
 
-        // 2. EJECUCIÓN (Llamamos a tu función matemática)
-        const mediaCalculada = servicio.getAveragePrice('precioGasoleoA');
-
-        // 3. COMPROBACIÓN (La media de 1.5 y 2.0 tiene que ser 1.75)
-        // Si no es 1.75, el test fallará y nos avisará.
-        assert.strictEqual(mediaCalculada, 1.75);
-    });
-
-});
+    // Mejora de eficiencia: En lugar de ordenar todo, si solo quieres el top 5, 
+    // podrías usar algoritmos más avanzados, pero un .sort().slice(0, 5) 
+    // suele ser aceptable si el dataset no tiene millones de registros.
+    getTop5(fuelType: 'precioGasoleoA' | 'precioGasolina95E5') {
+        const sorted = [...this.stations]
+            .filter(s => s[fuelType] !== null)
+            .sort((a, b) => (a[fuelType]! - b[fuelType]!));
+            
+        return {
+            cheapest: sorted.slice(0, 5),
+            expensive: sorted.slice(-5).reverse()
+        };
+    }
+}

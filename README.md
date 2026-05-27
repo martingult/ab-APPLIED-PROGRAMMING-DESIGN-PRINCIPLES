@@ -14,6 +14,9 @@ En esta versión se ha refactorizado el código para cumplir con los **principio
 - **Estructura Modular:** Cada interfaz y clase reside en su propio fichero dentro del directorio `src/`.
 
 ##  Cómo ejecutar el proyecto
+Primero hay que instalar dependencias: `npm install`
+Segundo hay que ejecutar el programa: `npm start`
+Tercero hay que ejecutar los tests: `npm test`
 
 ### 1. Requisitos previos
 - Node.js instalado en el sistema.
