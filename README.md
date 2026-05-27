@@ -18,7 +18,7 @@ Primero hay que instalar dependencias: `npm install`
 Segundo hay que ejecutar el programa: `npm start`
 Tercero hay que ejecutar los tests: `npm test`
 
-### 1. Requisitos previos
+### Requisitos previos
 - Node.js instalado en el sistema.
 
 ### 2. Instalación de dependencias
@@ -26,3 +26,11 @@ Abre la terminal en la raíz del proyecto y ejecuta:
 ```bash
 npm install
 npm install -D tsx
+
+Bibliografía y Referencias
+
+Ministerio para la Transición Ecológica y el Reto Demográfico (2026). Geoportal: Consulta de precios de carburantes en estaciones de servicio. [En línea]. Disponible en: https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/ [Accedido el 27 de mayo de 2026].
+
+QuickChart (2026). QuickChart: Web API for generating chart images. [En línea]. Disponible en: https://quickchart.io/ [Accedido el 27 de mayo de 2026].
+
+Martin, R.C. (2008). Clean Code: A Handbook of Agile Software Craftsmanship. Prentice Hall. (Principios aplicados en la estructura de servicios).
