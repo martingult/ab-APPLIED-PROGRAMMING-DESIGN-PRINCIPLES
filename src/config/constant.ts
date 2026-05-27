@@ -1,22 +1,21 @@
-/**
- * Configuración centralizada de constantes para evitar "magic strings".
- * Se utiliza la API oficial de tiempo real del Ministerio para mayor estabilidad.
- */
-export const CONFIG = {
-    // URL base estándar para obtener los datos de estaciones actuales
-    API_URL_BASE: "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProvincia",
+export interface Provincia {
+    id: string;
+    nombre: string;
+}
 
-    // Lista de provincias con sus IDs correspondientes
+export const CONFIG = {
+    API_URL_BASE: "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProvincia",
+    
     PROVINCIAS_INTERES: [
         { id: "28", nombre: "Madrid" },
         { id: "15", nombre: "A Coruña" },
         { id: "38", nombre: "Santa Cruz de Tenerife" },
         { id: "06", nombre: "Badajoz" }
-    ]
-};
+    ] as Provincia[],
 
-// Interfaz para asegurar el tipado correcto en el resto del proyecto
-export interface Provincia {
-    id: string;
-    nombre: string;
-}
+    // Definimos el objeto y sus propiedades explícitamente
+    COMBUSTIBLES: {
+        GASOLEO_A: "precioGasoleoA",
+        GASOLINA_95: "precioGasolina95E5"
+    }
+};
