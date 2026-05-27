@@ -10,7 +10,7 @@ La aplicación descarga los datos diarios y genera un informe de mercado para la
 ## Arquitectura y Clean Code
 En esta versión se ha refactorizado el código para cumplir con los **principios SOLID**:
 - **Single Responsibility:** Separación estricta entre la descarga de datos (`ApiService`) y los cálculos matemáticos (`ReportService`).
-- **Clean Code:** Eliminación de *magic strings/numbers* centralizando las configuraciones en `src/config/constants.ts`.
+- **Clean Code:** Eliminación de *magic strings/numbers* centralizando las configuraciones en `src/config/constant.ts`.
 - **Estructura Modular:** Cada interfaz y clase reside en su propio fichero dentro del directorio `src/`.
 
 ##  Cómo ejecutar el proyecto

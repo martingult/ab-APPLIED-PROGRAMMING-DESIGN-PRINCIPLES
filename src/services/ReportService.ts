@@ -42,4 +42,15 @@ export class ReportService {
             expensive: sorted.slice(-5).reverse()
         };
     }
+    /**
+     * Devuelve una estructura con datos de ejemplo para la gráfica semanal.
+     * En el futuro, puedes sustituir los valores por el filtrado real de tus datos.
+     *  fuelType Tipo de combustible
+     * Array de 7 números (precio medio por cada día de la semana)
+     */
+    getWeeklyAverageData(fuelType: 'precioGasoleoA' | 'precioGasolina95E5'): number[] {
+        // Simulamos la media de los 7 días de la semana
+        // Aquí es donde harías un .filter() por fechas si tuvieras el histórico
+        return [1.55, 1.54, 1.56, 1.58, 1.57, 1.55, 1.53]; 
+    }
 }

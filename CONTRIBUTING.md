@@ -10,9 +10,9 @@
 
 ## Reglas de Código (Clean Code)
 Este proyecto sigue los principios **SOLID**. Por favor, asegúrate de que:
-- **Single Responsibility:** Cada clase debe tener un único propósito. Si creas una nueva funcionalidad, valora si necesitas crear un nuevo servicio en la carpeta `src/services/`.
-- **No Magic Strings/Numbers:** Cualquier valor fijo (URLs, IDs, etc.) debe ir en `src/config/constants.ts`.
-- **Tipado Estricto:** Usa siempre interfaces explícitas (en `src/models/`) para los datos. Evita usar el tipo `any`.
+- **Single Responsibility:** Cada clase debe tener un único propósito. Si creas una nueva funcionalidad, valora si necesitas crear un nuevo servicio en la carpeta `src/service/`.
+- **No Magic Strings/Numbers:** Cualquier valor fijo (URLs, IDs, etc.) debe ir en `src/config/constant.ts`.
+- **Tipado Estricto:** Usa siempre interfaces explícitas (en `src/models`) para los datos. Evita usar el tipo `any`.
 
 ## Pull Requests
 - Asegúrate de que tu código funciona ejecutando `npx tsx src/index.ts` antes de subirlo.
